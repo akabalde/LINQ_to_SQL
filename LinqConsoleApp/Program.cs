@@ -45,7 +45,10 @@ namespace LinqConsoleApp
         {
             // Use a connection string.
             DataContext db = new DataContext
-                (@"c:\linqtest5\northwnd.mdf");
+            //(@"c:\linqtest5\northwnd.mdf");
+               ("Database=Northwind;" +
+                "Server=(localdb)\\mssqllocaldb;" +
+                "Integrated Security=SSPI");
 
             // Get a typed table to run queries.
             Table<Customer> Customers = db.GetTable<Customer>();
